@@ -24,6 +24,6 @@
 * [MySQL](https://www.mysql.com/) - v8
 
 ### Tests
-* PHPUnit is used to test the code. In order run tests, type: ```php artisan test```
+* PHPUnit is used to test the code. In order to run tests, execute from project directory: ```php artisan test```
 
 <p align="right">(<a href="#top">back to top</a>)</p>

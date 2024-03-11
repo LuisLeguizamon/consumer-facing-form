@@ -12,6 +12,11 @@ defineProps({
 const form = useForm({
     _method: 'POST',
     products: [],
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    contact_preference: '',
 });
 
 let showStep1 = ref(true);
@@ -43,6 +48,7 @@ function nextStep() {
     />
     <ClientFormStep2
         v-show="showStep2"
+        v-model="form"
     />
     <ClientFormStep3
         v-show="showStep3"

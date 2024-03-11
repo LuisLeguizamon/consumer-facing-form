@@ -1,6 +1,7 @@
 <script setup>
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
+import SelectOption from '@/Components/SelectOption.vue';
 
 const emits = defineEmits(['next-step', 'prev-step']);
 
@@ -8,6 +9,11 @@ const model = defineModel({
     type: Object,
     required: true,
 });
+
+const contactPreferenceOptions = [
+    { 'value': 'email', 'label': 'Email' },
+    { 'value': 'phone', 'label': 'Phone' },
+];
 
 function validateFields() {
     if (
@@ -74,12 +80,7 @@ function nextStep() {
 
             <div class="grid grid-cols-1 pt-5">
                 <InputLabel value="Contact Preference *"></InputLabel>
-                <select
-                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" 
-                    v-model="model.contact_preference">
-                    <option value="email">Email</option>
-                    <option value="phone">Phone</option>
-                </select>
+                <SelectOption v-model="model.contact_preference" :options="contactPreferenceOptions"></SelectOption>
             </div>
 
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"

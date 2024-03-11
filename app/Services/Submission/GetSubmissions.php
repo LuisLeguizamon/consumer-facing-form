@@ -13,6 +13,7 @@ class GetSubmissions
         $submissions->each(function ($submission) {
             $submission->append('created_at_format');
             $submission->append('insurance_product_format');
+            $submission->consumer->append('full_name');
         });
 
         return $submissions;

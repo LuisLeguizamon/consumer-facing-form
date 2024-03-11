@@ -28,6 +28,9 @@ defineProps({
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Product
                             </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Consumer
+                            </th>
                         </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -38,6 +41,9 @@ defineProps({
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ submission.insurance_product_format }}</div>
                                 </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ submission.consumer.full_name }}</div>
+                                </td>                                
                             </tr>
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap" colspan="5" v-if="submissions.length === 0">

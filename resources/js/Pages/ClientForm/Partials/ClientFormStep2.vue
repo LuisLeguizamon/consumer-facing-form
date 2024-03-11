@@ -2,13 +2,32 @@
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-defineEmits(['next-step', 'prev-step']);
+const emits = defineEmits(['next-step', 'prev-step']);
 
 const model = defineModel({
     type: Object,
     required: true,
 });
 
+function validateFields() {
+    if (
+        !model.value.first_name ||
+        !model.value.last_name ||
+        !model.value.email ||
+        !model.value.phone ||
+        !model.value.contact_preference
+    ) {
+        alert('Please fill in all the required fields.');
+        return false;
+    }
+    return true;
+}
+
+function nextStep() {
+    if (validateFields()) {
+        emits('next-step');
+    }
+}
 </script>
 <template>
     <div class="grid md:grid-cols-2 bg-white h-screen">
@@ -55,7 +74,7 @@ const model = defineModel({
             </div>
 
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"
-                    @click="$emit('next-step')">
+                    @click="nextStep">
                 Continue
             </button>
             <button class="py-3 rounded-md text-blue-600 text-sm w-full border-solid border-2 border-blue-600 hover:bg-slate-100"

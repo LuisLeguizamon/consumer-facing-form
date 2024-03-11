@@ -46,6 +46,15 @@ const model = defineModel({
                 <InputLabel value="Contact Preference *"></InputLabel>
                 <TextInput v-model="model.contact_preference" placeholder="Enter Contact Prefence"></TextInput>   
             </div>
+
+            <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"
+                    @click="$emit('next-step')">
+                Continue
+            </button>
+            <button class="py-3 rounded-md text-blue-600 text-sm w-full border-solid border-2 border-blue-600 hover:bg-slate-100"
+                    @click="$emit('prev-step')">
+                Back
+            </button>
         </div>
     </div>
 </template>

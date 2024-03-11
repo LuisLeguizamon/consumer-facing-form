@@ -49,6 +49,16 @@ function prevStep2() {
     showStep2.value = false;
     showStep3.value = false;
 }
+
+function prevStep3() {
+    showStep1.value = false;
+    showStep2.value = true;
+    showStep3.value = false;
+}
+
+function submit() {
+// TODO
+}
 </script>
 <template>
     <ClientFormStep1
@@ -66,5 +76,8 @@ function prevStep2() {
     />
     <ClientFormStep3
         v-show="showStep3"
+        v-model="form"
+        @prev-step="prevStep3()"
+        @submit="submit"
     />
 </template>

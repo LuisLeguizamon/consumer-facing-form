@@ -25,7 +25,12 @@ function isProductSelected(value) {
             <p class="text-slate-500 text-sm">
                 Please select one or more options below that you'd like to have quoted for insurance.
             </p>
-            <!-- TODO: IMPLEMENT PRODUCT CARD -->
+            <ProductCard
+                v-for="product in products"
+                :product="product"
+                :is-selected="isProductSelected(product.value)"
+                @product-selected="$emit('product-selected', $event)"
+            />
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full"
                     @click="$emit('next-step')">
                 Agree and Continue

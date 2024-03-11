@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\InsuranceProduct;
+use App\Services\InsuranceProduct\GetInsuranceProducts;
 use Inertia\Inertia;
 
 class ClientFormController extends Controller
 {
+    public function __construct(
+        private GetInsuranceProducts $getInsuranceProducts,
+    )
+    {}
+
     public function index()
     {
         return Inertia::render('ClientForm/ClientForm', [
-            'products' => InsuranceProduct::toArray(),
+            'products' => $this->getInsuranceProducts->execute(),
         ]);
     }
 }

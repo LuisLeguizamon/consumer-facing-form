@@ -46,7 +46,12 @@ const model = defineModel({
 
             <div class="grid grid-cols-1 pt-5">
                 <InputLabel value="Contact Preference *"></InputLabel>
-                <TextInput v-model="model.contact_preference" placeholder="Enter Contact Prefence"></TextInput>   
+                <select
+                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" 
+                    v-model="model.contact_preference">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                </select>
             </div>
 
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"

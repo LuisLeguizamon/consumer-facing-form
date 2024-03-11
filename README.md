@@ -9,6 +9,7 @@
 * Create a database
 * Create .env file with DB variables: DB_DATABASE, DB_USERNAME and DB_PASSWORD
 * From project directory execute: ```php artisan migrate```
+* From project directory execute: ```php artisan key:generate```
 * Install nvm to manage node and npm (optional but recommended)
 * From project directory execute: ```npm install```
 * From project directory execute: ```npm run build```

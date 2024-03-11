@@ -14,6 +14,10 @@
 * From project directory execute: ```npm install```
 * From project directory execute: ```npm run build```
 
+* To run a local server from project directory execute: ```php artisan serve```
+* Route to register an admin user: 'http://127.0.0.1:8000/register'
+* Route to login admin panel: 'http://127.0.0.1:8000/login';
+
 ### Built With
 * [Laravel](https://laravel.com/) - v10
 * [PHP](https://www.php.net/) - v8.2

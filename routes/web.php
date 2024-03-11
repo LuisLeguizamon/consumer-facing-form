@@ -17,7 +17,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [ClientFormController::class, 'index']);
+Route::controller(ClientFormController::class)->group(function() {
+    Route::get('/', 'index')->name('client_form.index');
+    Route::post('client-form/store', 'store')->name('client_form.store');
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

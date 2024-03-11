@@ -62,7 +62,7 @@ function prevStep3() {
 }
 
 function submit() {
-// TODO
+    form.post(route('client_form.store'));
 }
 </script>
 <template>

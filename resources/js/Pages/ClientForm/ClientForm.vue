@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { useForm } from '@inertiajs/vue3';
+import { Head, useForm } from '@inertiajs/vue3';
 import ClientFormStep1 from './Partials/ClientFormStep1.vue';
 import ClientFormStep2 from './Partials/ClientFormStep2.vue';
 import ClientFormStep3 from './Partials/ClientFormStep3.vue';
@@ -74,6 +74,8 @@ function submit() {
 }
 </script>
 <template>
+    <Head title="Client Form" />
+
     <ClientFormStep1
         v-show="showStep1"
         :products="products"

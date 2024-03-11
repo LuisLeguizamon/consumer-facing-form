@@ -27,6 +27,7 @@ const form = useForm({
 let showStep1 = ref(true);
 let showStep2 = ref(false);
 let showStep3 = ref(false);
+let showError = ref(false);
 
 function productSelected(value) {
     if (form.products.includes(value)) {
@@ -59,10 +60,17 @@ function prevStep3() {
     showStep1.value = false;
     showStep2.value = true;
     showStep3.value = false;
+    showError = false;
 }
 
 function submit() {
-    form.post(route('client_form.store'));
+    form.post(route('client_form.store'), {
+        onFinish: () => {
+            if (form.errors) {
+                showError.value = true;
+            }
+        }
+    });
 }
 </script>
 <template>
@@ -82,6 +90,7 @@ function submit() {
     <ClientFormStep3
         v-show="showStep3"
         v-model="form"
+        :show-error="showError"
         @prev-step="prevStep3()"
         @submit="submit"
     />

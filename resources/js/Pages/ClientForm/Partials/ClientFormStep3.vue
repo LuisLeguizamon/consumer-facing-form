@@ -4,6 +4,10 @@ import TextInput from '@/Components/TextInput.vue';
 
 const emits = defineEmits(['prev-step', 'submit']);
 
+const props = defineProps({
+    showError: Boolean,
+});
+
 const model = defineModel({
     type: Object,
     required: true,
@@ -70,6 +74,11 @@ function submit() {
                     @click="submit">
                 Submit
             </button>
+            <template v-if="showError">
+                <div v-for="error in model.errors" class="text-red-600 py-1">
+                    <h1>{{ error }}</h1>
+                </div>
+            </template>
             <button class="py-3 rounded-md text-blue-600 text-sm w-full border-solid border-2 border-blue-600 hover:bg-slate-100"
                     @click="$emit('prev-step')">
                 Back

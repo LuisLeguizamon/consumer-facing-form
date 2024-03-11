@@ -31,7 +31,7 @@ function isProductSelected(value) {
                 :is-selected="isProductSelected(product.value)"
                 @product-selected="$emit('product-selected', $event)"
             />
-            <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full"
+            <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"
                     @click="$emit('next-step')">
                 Agree and Continue
             </button>

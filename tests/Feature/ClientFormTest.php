@@ -5,12 +5,12 @@ namespace Tests\Feature;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class ClientFormTest extends TestCase
 {
     /**
      * A basic test example.
      */
-    public function test_the_application_returns_a_successful_response(): void
+    public function test_client_form_can_be_rendered(): void
     {
         $response = $this->get('/');
 

@@ -10,6 +10,19 @@ defineProps({
     'product': Object,
     'isSelected': Boolean,
 });
+
+const getIcon = (productValue) => {
+    switch (productValue) {
+        case 'home':
+            return HomeIcon;
+        case 'auto':
+            return AutoIcon;
+        case 'recreational_vehicle':
+            return RecreationalVehicleIcon;
+        default:
+            return HomeIcon;
+    }
+};
 </script>
 <template>
     <!-- Product Cards -->
@@ -19,15 +32,7 @@ defineProps({
         @click="$emit('product-selected', product.value)"
     >
         <div class="bg-white p-3 rounded-md">
-            <div v-if="product.value === 'home'">
-                <HomeIcon></HomeIcon>
-            </div>
-            <div v-else-if="product.value === 'auto'">
-                <AutoIcon></AutoIcon>
-            </div>
-            <div v-else-if="product.value === 'recreational_vehicle'">
-                <RecreationalVehicleIcon></RecreationalVehicleIcon>
-            </div>
+            <component :is="getIcon(product.value)"></component>
         </div>
         <div class="pl-5">
             <h1 class="font-medium">{{ product.title }}</h1>

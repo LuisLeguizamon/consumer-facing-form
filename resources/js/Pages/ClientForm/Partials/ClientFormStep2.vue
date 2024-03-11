@@ -70,12 +70,12 @@ function nextStep() {
 
             <div class="grid grid-cols-1 pt-5">
                 <InputLabel value="Email Address *"></InputLabel>
-                <TextInput v-model="model.email" placeholder="Enter Email Address"></TextInput>   
+                <TextInput v-model="model.email" type="email" placeholder="Enter Email Address"></TextInput>   
             </div>
 
             <div class="grid grid-cols-1 pt-5">
                 <InputLabel value="Phone No *"></InputLabel>
-                <TextInput v-model="model.phone" placeholder="Enter Phone No"></TextInput>   
+                <TextInput v-model="model.phone" type="tel" placeholder="Enter Phone No"></TextInput>   
             </div>
 
             <div class="grid grid-cols-1 pt-5">

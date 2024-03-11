@@ -1,5 +1,6 @@
 <script setup>
 import InputLabel from '@/Components/InputLabel.vue';
+import SelectState from '@/Components/ClientForm/SelectState.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 const emits = defineEmits(['prev-step', 'submit']);
@@ -62,7 +63,7 @@ function submit() {
 
             <div class="grid grid-cols-1 pt-5">
                 <InputLabel value="State *"></InputLabel>
-                <TextInput v-model="model.state" placeholder="---"></TextInput>   
+                <SelectState v-model="model.state"></SelectState>
             </div>
 
             <div class="grid grid-cols-1 pt-5">

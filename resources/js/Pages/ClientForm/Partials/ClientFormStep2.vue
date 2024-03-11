@@ -20,6 +20,15 @@ function validateFields() {
         alert('Please fill in all the required fields.');
         return false;
     }
+
+    // Regular expression for basic email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(model.value.email)) {
+        alert('Invalid email address. Please enter a valid email.');
+        return false;
+    }
+
     return true;
 }
 

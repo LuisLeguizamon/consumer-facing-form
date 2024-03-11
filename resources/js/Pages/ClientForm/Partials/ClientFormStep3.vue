@@ -2,13 +2,30 @@
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-defineEmits(['prev-step', 'submit']);
+const emits = defineEmits(['prev-step', 'submit']);
 
 const model = defineModel({
     type: Object,
     required: true,
 });
 
+function validateFields() {
+    if (
+        !model.value.city ||
+        !model.value.state ||
+        !model.value.zip_code
+    ) {
+        alert('Please fill in all the required fields.');
+        return false;
+    }
+    return true;
+}
+
+function submit() {
+    if (validateFields()) {
+        emits('submit');
+    }
+}
 </script>
 <template>
     <div class="grid md:grid-cols-2 bg-white h-screen">
@@ -50,7 +67,7 @@ const model = defineModel({
             </div>
 
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"
-                    @click="$emit('submit')">
+                    @click="submit">
                 Submit
             </button>
             <button class="py-3 rounded-md text-blue-600 text-sm w-full border-solid border-2 border-blue-600 hover:bg-slate-100"

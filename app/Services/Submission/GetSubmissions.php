@@ -8,7 +8,7 @@ class GetSubmissions
 {
     public function execute()
     {
-        $submissions = Submission::with('consumer')->get();
+        $submissions = Submission::with('consumer')->orderBy('created_at', 'desc')->get();
 
         $submissions->each(function ($submission) {
             $submission->append('created_at_format');

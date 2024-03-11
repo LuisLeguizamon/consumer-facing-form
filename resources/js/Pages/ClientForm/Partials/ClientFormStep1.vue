@@ -1,7 +1,7 @@
 <script setup>
 import ProductCard from './ProductCard.vue';
 
-defineEmits(['next-step', 'product-selected']);
+const emits = defineEmits(['next-step', 'product-selected']);
 
 const props = defineProps({
     'products': Object,
@@ -12,6 +12,13 @@ function isProductSelected(value) {
     return props.productsSelected.includes(value);
 }
 
+function nextStep() {
+    if (props.productsSelected.length > 0) {
+        emits('next-step');
+    } else {
+        alert("Please select one or more options");
+    }
+}
 </script>
 <template>
     <div class="grid md:grid-cols-2 bg-white h-screen">
@@ -32,7 +39,7 @@ function isProductSelected(value) {
                 @product-selected="$emit('product-selected', $event)"
             />
             <button class="bg-blue-600 my-5 py-3 rounded-md text-white text-sm w-full hover:bg-blue-700"
-                    @click="$emit('next-step')">
+                    @click="nextStep">
                 Agree and Continue
             </button>
             <p class="text-slate-500 text-sm">

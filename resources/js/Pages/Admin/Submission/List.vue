@@ -33,10 +33,10 @@ defineProps({
                         <tbody class="bg-white divide-y divide-gray-200">
                             <tr v-for="submission in submissions" :key="submission.id">
                                 <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900">{{ submission.created_at }}</div>
+                                    <div class="text-sm text-gray-900">{{ submission.created_at_format }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{ submission.insurance_product }}</div>
+                                    <div class="text-sm text-gray-900">{{ submission.insurance_product_format }}</div>
                                 </td>
                             </tr>
                             <tr>

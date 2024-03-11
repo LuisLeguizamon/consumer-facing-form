@@ -15,7 +15,12 @@ const form = useForm({
 let showStep1 = ref(true);
 
 function productSelected(value) {
-// TODO
+    if (form.products.includes(value)) {
+        let index = form.products.indexOf(value);
+        form.products.splice(index, 1);
+    } else {
+        form.products.push(value);
+    }
 };
 
 function nextStep() {

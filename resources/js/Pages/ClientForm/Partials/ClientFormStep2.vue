@@ -2,6 +2,8 @@
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
+defineEmits(['next-step', 'prev-step']);
+
 const model = defineModel({
     type: Object,
     required: true,

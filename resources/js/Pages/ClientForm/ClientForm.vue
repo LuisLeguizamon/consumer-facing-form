@@ -16,7 +16,7 @@ const form = useForm({
     last_name: '',
     email: '',
     phone: '',
-    contact_preference: '',
+    contact_preference: 'email',
     street_address: '',
     ste_apt: '',
     city: '',

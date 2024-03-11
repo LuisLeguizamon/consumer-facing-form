@@ -17,6 +17,11 @@ const form = useForm({
     email: '',
     phone: '',
     contact_preference: '',
+    street_address: '',
+    ste_apt: '',
+    city: '',
+    state: '',
+    zip_code: '',
 });
 
 let showStep1 = ref(true);

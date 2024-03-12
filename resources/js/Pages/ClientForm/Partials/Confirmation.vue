@@ -13,7 +13,7 @@ import CheckIcon2 from '@/Components/Icons/CheckIcon2.vue';
         <div class="mr-24 mt-6 grid grid-rows-3">
             <div class="text-center mx-auto mt-auto mb-8">
                 <h1 class="font-bold text-slate-800 text-xl">
-                    Your request was sended. Out team will review it and we will contact you shortly, thank you!
+                    Your request was sent. Out team will review it and we will contact you shortly, thank you!
                 </h1>
             </div>
             <div class="mx-auto my-0">

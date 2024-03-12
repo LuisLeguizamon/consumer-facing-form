@@ -32,7 +32,7 @@
 * PHPUnit is used to test the code. In order to run tests, execute from project directory: ```php artisan test```
 
 ### HOURS FOR DEVELOPMENT
-- Define structure (schema, logic and UI strategy) based on requirments: 1 hour
+- Define structure (schema, logic and UI strategy) based on requirements: 1 hour
 - Installation and Readme setup: 30 minutes
 - Tables: 30 minutes
 - Main UI: 2 hours

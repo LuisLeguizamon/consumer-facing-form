@@ -21,6 +21,7 @@ use Inertia\Inertia;
 Route::controller(ClientFormController::class)->group(function() {
     Route::get('/', 'index')->name('client_form.index');
     Route::post('client-form/store', 'store')->name('client_form.store');
+    Route::get('client-form/confirmation', 'confirmation')->name('client_form.confirmation');
 });
 
 Route::get('/dashboard', function () {

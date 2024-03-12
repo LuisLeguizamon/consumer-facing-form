@@ -26,6 +26,11 @@ class ClientFormController extends Controller
     {
         $this->storeClientForm->execute($request->validated());
 
-        return Inertia::location(route('client_form.index'));
+        return redirect()->route('client_form.confirmation');
+    }
+
+    public function confirmation()
+    {
+        return Inertia::render('ClientForm/Partials/Confirmation');
     }
 }
